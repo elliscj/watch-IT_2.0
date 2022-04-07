@@ -1,0 +1,139 @@
+
+
+ 
+
+  {{!-- <body> --}}
+    <div class="container"></div>
+
+
+{{!-- <div ></div> --}}
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">WatchiT</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/nowplaying">
+            <i class="far fa-play-circle"></i>Currently Playing
+          </a>
+        </li>
+        <li>
+          <a href="/popular">
+            <i class="far fa-star"></i>Popular
+          </a>
+        </li>
+        <li>
+          <a href="/toprated">
+            <i class="far fa-arrow-alt-circle-up"></i>Top Rated
+          </a>
+        </li>
+        <li>
+          <a href="/upcoming">
+            <i class="far fa-calendar-alt"></i>Upcoming
+          </a>
+        </li>
+        {{!-- <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Genres<span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu" >
+                <li><a href="#" class="action" style="color: red;" id="action">Action</a></li>
+                <li>
+                  <a href="#" class="adventure" style="color: red;"  id="adventure">Adventure</a>
+                </li>
+                <li>
+                  <a href="#" class="animation" style="color: red;" id="animation">Animation</a>
+                </li>
+                <li><a href="#" class="comedy" style="color: red;"  id="comedy">Comedy</a></li>
+                <li><a href="#" class="crime" style="color: red;"  id="crime">Crime</a></li>
+                <li><a href="#" class="drama" style="color: red;"  id="drama">Drama</a></li>
+                <li><a href="#" class="family" style="color: red;"  id="family">Family</a></li>
+                <li><a href="#" class="fantasy" style="color: red;"  id="fantasy">Fantasy</a></li>
+                <li><a href="#" class="history" style="color: red;"  id="history">History</a></li>
+                <li><a href="#" class="music" style="color: red;"  id="romance">Romance</a></li>
+                <li>
+                  <a href="#" class="scifi" style="color: red;"  id="scifi">Science Fiction</a>
+                </li>
+                <li><a href="#" class="thriller" style="color:red;"  id="thriller">Thriller</a></li>
+              </ul>
+            </li> --}}
+            
+         <li class="active">
+          <a href="/my-movies">
+         <i class="fas fa-camera-movie"></i>My Movies
+          </a>
+        </li>
+        {{#if loggedIn}}
+        <li>
+          <button class="btn btn-primary" id="logout">
+        <i class="fa-regular fa-arrow-right-to-bracket"></i>LOGOUT
+          </button>
+        </li> 
+        {{else}}
+        <li>
+          <a href="/login-form">
+        <i class="fa-regular fa-arrow-right-to-bracket"></i>LOGIN/SIGN UP
+          </a>
+        </li>
+        {{/if}}
+      </ul>
+      
+    </div>
+     <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-right searchForm">
+              <div class="form-group">
+                {{!-- <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search movies"
+                />
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button> --}}
+            </form>
+          </ul>
+    <!-- /.navbar-collapse -->
+  </div>
+  
+  <!-- /.container-fluid -->
+</nav>
+    <div style="font-family: “Open Sans”, sans-serif;color: #F5F5F5; 
+    text-shadow: 0px -3px 4px #fff, 0px -2px 10px #FF3, 
+    0px -10px 20px #F90, 0px -20px 40px #C33;" 
+    class="text-center background-image favor"><span>FAVORITES</span> 
+    </div>
+
+    <div class="container favorite-container">
+
+    {{#each movies as |movie|}}
+    {{> favorite}}
+    {{/each}}
+
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/JS/my-movies.js"></script>
+  
+

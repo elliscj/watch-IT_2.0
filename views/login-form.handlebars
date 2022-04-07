@@ -1,0 +1,162 @@
+  
+  
+  
+ <body>
+    <div class="container"></div>
+
+<div></div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">WatchiT</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/nowplaying">
+            <i class="far fa-play-circle"></i>Currently Playing
+          </a>
+        </li>
+        <li>
+          <a href="/popular">
+            <i class="far fa-star"></i>Popular
+          </a>
+        </li>
+        <li>
+          <a href="/toprated">
+            <i class="far fa-arrow-alt-circle-up"></i>Top Rated
+          </a>
+        </li>
+        <li>
+          <a href="/upcoming">
+            <i class="far fa-calendar-alt"></i>Upcoming
+          </a>
+        </li>
+        <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Genres<span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu" >
+                <li><a href="#" class="action" style="color: red;" id="action">Action</a></li>
+                <li>
+                  <a href="#" class="adventure" style="color: red;"  id="adventure">Adventure</a>
+                </li>
+                <li>
+                  <a href="#" class="animation" style="color: red;" id="animation">Animation</a>
+                </li>
+                <li><a href="#" class="comedy" style="color: red;"  id="comedy">Comedy</a></li>
+                <li><a href="#" class="crime" style="color: red;"  id="crime">Crime</a></li>
+                <li><a href="#" class="drama" style="color: red;"  id="drama">Drama</a></li>
+                <li><a href="#" class="family" style="color: red;"  id="family">Family</a></li>
+                <li><a href="#" class="fantasy" style="color: red;"  id="fantasy">Fantasy</a></li>
+                <li><a href="#" class="history" style="color: red;"  id="history">History</a></li>
+                <li><a href="#" class="music" style="color: red;"  id="romance">Romance</a></li>
+                <li>
+                  <a href="#" class="scifi" style="color: red;"  id="scifi">Science Fiction</a>
+                </li>
+                <li><a href="#" class="thriller" style="color:red;"  id="thriller">Thriller</a></li>
+              </ul>
+            </li>
+         {{!-- {{#if loggedIn}}
+         <li>
+          <a href="/my-movies">
+         <i class="fas fa-camera-movie"></i>My Movies
+          </a>
+        </li> --}}
+        {{!-- {{/if}} --}}
+        {{#if loggedIn}}
+        <li>
+          <button class="btn btn-primary" id="logout">
+        <i class="fa-regular fa-arrow-right-to-bracket"></i>LOGOUT
+          </button>
+        </li> 
+        {{else}}
+        <li class="active">
+          <a href="/login-form">
+        <i class="fa-regular fa-arrow-right-to-bracket"></i>LOGIN/SIGN UP
+          </a>
+        </li>
+        {{/if}}
+      </ul>
+      
+    </div>
+   <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-right searchForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search movies"
+                />
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </ul>
+    <!-- /.navbar-collapse -->
+  </div>
+  
+  
+  <!-- /.container-fluid -->
+</nav>
+
+<div style="display: flex; justify-content:center; border: 10px;" >
+  <div class="login-card">
+    <h2 class="page-title">Login</h2>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">Email:</label>
+        <input style="background-color: black;" class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">Password:</label>
+        <input style="background-color: black;" class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
+  <div class="login-card">
+    <h2 class="page-title">Signup</h2>
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="username-signup">Username:</label>
+        <input style="background-color: black;" class="form-input" type="text" id="username-signup" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">Email:</label>
+        <input style="background-color: black;" class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">Password:</label>
+        <input style="background-color: black;" class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
+</div>
+        
+        <script type="text/javascript" src="/JS/login-form.js"></script>
+        <script src="/JS/logout.js"></script>
